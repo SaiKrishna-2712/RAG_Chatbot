@@ -1,0 +1,16 @@
+streamlit
+langchain
+openai
+anthropic
+langchain-community
+langchain-anthropic
+langchainhub
+voyageai
+pinecone-client
+datasets
+langchain-core
+langchain-google-genai
+google-generativeai
+python-dotenv
+PyPDF2
+faiss-cpu
