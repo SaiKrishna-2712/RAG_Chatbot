@@ -30,7 +30,7 @@ def get_pdf_text(pdf_docs):
 
 # this function is responsible for making the extracted text from the pdfs into chunks of size 10000
 def get_text_chunks(text):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
     chunks = text_splitter.split_text(text)
     return chunks
 
@@ -44,7 +44,7 @@ def get_vector_store(text_chunks):
 def get_conversational_chain():
 
     prompt_template = """
-    Answer the question as detailed as possible from the provided context, make sure to provide all the details, if the answer is not in
+    Answer the question as eloborated as possible from the provided context, make sure to provide all the details, if the answer is not in
     provided context just say, "answer is not available in the context", don't provide the wrong answer, also present the data as requested 
     by the user for example if the user asks as bullet points give the anser in bullet points if the user asks it as aline separated give it 
     line separated\n\n

@@ -1,8 +1,0 @@
-# Environment files
-.env
-
-# Build output
-build/
-
-#vector store
-faiss_index/

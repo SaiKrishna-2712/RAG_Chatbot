@@ -7,7 +7,7 @@ from langchain_core.runnables import RunnableSequence
 from langchain_core.output_parsers import StrOutputParser
 
 # Store your api key
-CLAUDE_API_KEY = ''
+CLAUDE_API_KEY = 'nokey'
 GEMINI_API_KEY = ''
 
 # Initialize LLMs
