@@ -1,0 +1,3 @@
+ML/.env
+.venv/
+ML/faiss_index/
