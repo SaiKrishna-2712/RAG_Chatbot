@@ -1,3 +1,4 @@
 .venv/
 ML/.env
-ML/faiss_index
+faiss_index/index.pkl
+faiss_index/index.faiss

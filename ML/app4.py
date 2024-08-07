@@ -47,7 +47,7 @@ def get_conversational_chain():
     Answer the question as eloborated as possible from the provided context, make sure to provide all the details, if the answer is not in
     provided context just say, "answer is not available in the context", don't provide the wrong answer, also present the data as requested 
     by the user for example if the user asks as bullet points give the anser in bullet points if the user asks it as aline separated give it 
-    line separated\n\n
+    line separated, phrase your response in simple english\n\n
     Context:\n {context}?\n
     Question: \n{question}\n
 
@@ -55,7 +55,7 @@ def get_conversational_chain():
     """
 
     model = ChatGoogleGenerativeAI(model="gemini-pro",
-                             temperature=0.3)
+                             temperature=0.9)
 
     prompt = PromptTemplate(template = prompt_template, input_variables = ["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
@@ -69,7 +69,7 @@ def user_input(user_question):
     
     new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
     docs = new_db.similarity_search(user_question, k=3)
-
+    
     chain = get_conversational_chain()
 
     
@@ -79,6 +79,7 @@ def user_input(user_question):
 
     print(response)
     st.write("Reply: ", response["output_text"])
+    st.write("Docs: ", docs)
 
 
 
